@@ -204,7 +204,7 @@ public class GsonFunctions {
         String json = jsonResponse.body().asString();
         String prettyJsonString = "";
         try {
-            prettyJsonString = new GsonBuilder().setPrettyPrinting().create().toJson(new JsonParser().parse(json));
+           prettyJsonString = new GsonBuilder().setPrettyPrinting().create().toJson(new JsonParser().parse(json));
             if (jsonResponse.getStatusCode() >= 400 && jsonResponse.getStatusCode() < 600) {
                 Assert.fail("Endpoint for processing " + classOfT + "\n return error: " + prettyJsonString);
             } else {
